@@ -2,14 +2,21 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from flask_cors import CORS
 import collections.abc
+import middleware
 
 app = Flask(__name__)
+app.wsgi_app = middleware.CoverageMiddleware(app.wsgi_app)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Connect to MongoDB
-client = MongoClient('mongodb://mongo:27017/')
+client = MongoClient('mongodb://localhost:27017/')
 db = client['studentsdb']
-students_collection = db['students']
+students_collection = db['students']    
+
+@app.route('/joke', methods=['GET']) 
+def get_joke():
+    joke = {"joke": "Why did the tomato turn red? Because it saw the salad dressing!"}
+    return jsonify(joke)
 
 @app.route('/students', methods=['GET'])
 def get_students():
@@ -39,4 +46,4 @@ def delete_student(student_id):
     return jsonify({'message': 'Student deleted successfully'})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6000, debug=True)
+    app.run(host='0.0.0.0', port=6000, debug=False)
