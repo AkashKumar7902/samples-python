@@ -1,0 +1,42 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-2
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:6000/students
+        header:
+            Accept: '*/*'
+            Host: localhost:6000
+            User-Agent: curl/7.81.0
+        body: ""
+        timestamp: 2024-04-17T13:20:35.590909924+05:30
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "93"
+            Content-Type: application/json
+            Date: Wed, 17 Apr 2024 07:50:35 GMT
+            Server: Werkzeug/2.2.2 Python/3.12.1
+        body: |
+            [{"age":21,"name":"Akash kumar","student_id":9},{"age":21,"name":"Jack Daw","student_id":9}]
+        status_message: OK
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-04-17T13:20:37.685893305+05:30
+    objects: []
+    assertions:
+        noise:
+            body.age: []
+            body.name: []
+            header.Date: []
+    created: 1713340237
+curl: |
+    curl --request GET \
+      --url http://localhost:6000/students \
+      --header 'Accept: */*' \
+      --header 'Host: localhost:6000' \
+      --header 'User-Agent: curl/7.81.0' \

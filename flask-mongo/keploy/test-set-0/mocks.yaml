@@ -1,0 +1,249 @@
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-0
+spec:
+    metadata:
+        operation: '{ OpQuery flags: [], fullCollectionName: admin.$cmd, numberToSkip: 0, numberToReturn: -1, query: {"ismaster": {"$numberInt":"1"},"helloOk": true,"client": {"driver": {"name": "PyMongo","version": "4.4.1"},"os": {"type": "Linux","name": "Linux","architecture": "x86_64","version": "5.15.0-91-generic"},"platform": "CPython 3.12.1.final.0"}}, returnFieldsSelector:  }'
+        type: config
+    requests:
+        - header:
+            length: 265
+            requestId: 1804289383
+            responseTo: 0
+            Opcode: 2004
+          message:
+            flags: 0
+            collection_name: admin.$cmd
+            number_to_skip: 0
+            number_to_return: -1
+            query: '{"ismaster":{"$numberInt":"1"},"helloOk":true,"client":{"driver":{"name":"PyMongo","version":"4.4.1"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"5.15.0-91-generic"},"platform":"CPython 3.12.1.final.0"}}'
+            return_fields_selector: ""
+    responses:
+        - header:
+            length: 329
+            requestId: 358
+            responseTo: 1804289383
+            Opcode: 1
+          message:
+            response_flags: 8
+            cursor_id: 0
+            starting_from: 0
+            number_returned: 1
+            documents:
+                - '{"helloOk":true,"ismaster":true,"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1713340213658"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"36"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"21"},"readOnly":false,"ok":{"$numberDouble":"1.0"}}'
+          read_delay: 235477
+    created: 1713340213
+    reqTimestampMock: 2024-04-17T13:20:13.658846558+05:30
+    resTimestampMock: 2024-04-17T13:20:13.659182721+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-1
+spec:
+    metadata:
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$db":"admin"} }], checksum: 0 }'
+        type: config
+    requests:
+        - header:
+            length: 52
+            requestId: 1714636915
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"hello":{"$numberInt":"1"},"$db":"admin"} }'
+            checksum: 0
+          read_delay: 10003082796
+    responses:
+        - header:
+            length: 313
+            requestId: 364
+            responseTo: 1714636915
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"isWritablePrimary":true,"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1713340223664"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"37"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"21"},"readOnly":false,"ok":{"$numberDouble":"1.0"}} }'
+            checksum: 0
+          read_delay: 578129
+    created: 1713340223
+    reqTimestampMock: 2024-04-17T13:20:23.66402274+05:30
+    resTimestampMock: 2024-04-17T13:20:23.664857169+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-2
+spec:
+    metadata:
+        operation: '{ OpMsg flags: 65536, sections: [{ SectionSingle msg: {"hello":{"$numberInt":"1"},"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxAwaitTimeMS":{"$numberInt":"10000"},"$db":"admin"} }], checksum: 0 }'
+        type: config
+    requests:
+        - header:
+            length: 134
+            requestId: 846930886
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 65536
+            sections:
+                - '{ SectionSingle msg: {"hello":{"$numberInt":"1"},"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxAwaitTimeMS":{"$numberInt":"10000"},"$db":"admin"} }'
+            checksum: 0
+          read_delay: 623955
+    responses:
+        - header:
+            length: 313
+            requestId: 365
+            responseTo: 846930886
+            Opcode: 2013
+          message:
+            flagBits: 2
+            sections:
+                - '{ SectionSingle msg: {"isWritablePrimary":true,"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1713340223669"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"36"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"21"},"readOnly":false,"ok":{"$numberDouble":"1.0"}} }'
+            checksum: 0
+          read_delay: 10010059115
+    created: 1713340223
+    reqTimestampMock: 2024-04-17T13:20:13.659911444+05:30
+    resTimestampMock: 2024-04-17T13:20:23.670223608+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-3
+spec:
+    metadata:
+        operation: '{ OpQuery flags: [], fullCollectionName: admin.$cmd, numberToSkip: 0, numberToReturn: -1, query: {"ismaster": {"$numberInt":"1"},"helloOk": true,"client": {"driver": {"name": "PyMongo","version": "4.4.1"},"os": {"type": "Linux","name": "Linux","architecture": "x86_64","version": "5.15.0-91-generic"},"platform": "CPython 3.12.1.final.0"},"compression": []}, returnFieldsSelector:  }'
+        type: config
+    requests:
+        - header:
+            length: 283
+            requestId: 1957747793
+            responseTo: 0
+            Opcode: 2004
+          message:
+            flags: 0
+            collection_name: admin.$cmd
+            number_to_skip: 0
+            number_to_return: -1
+            query: '{"ismaster":{"$numberInt":"1"},"helloOk":true,"client":{"driver":{"name":"PyMongo","version":"4.4.1"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"5.15.0-91-generic"},"platform":"CPython 3.12.1.final.0"},"compression":[]}'
+            return_fields_selector: ""
+    responses:
+        - header:
+            length: 329
+            requestId: 370
+            responseTo: 1957747793
+            Opcode: 1
+          message:
+            response_flags: 8
+            cursor_id: 0
+            starting_from: 0
+            number_returned: 1
+            documents:
+                - '{"helloOk":true,"ismaster":true,"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1713340230592"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"38"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"21"},"readOnly":false,"ok":{"$numberDouble":"1.0"}}'
+          read_delay: 289896
+    created: 1713340230
+    reqTimestampMock: 2024-04-17T13:20:30.592272563+05:30
+    resTimestampMock: 2024-04-17T13:20:30.592693831+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-4
+spec:
+    metadata:
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"insert":"students","ordered":true,"lsid":{"id":{"$binary":{"base64":"LPuGTG5HTtWZ+4WDaLhOtg==","subType":"04"}}},"$db":"studentsdb"} }, { SectionSingle identifier: documents , msgs: [ {"_id":{"$oid":"661f7f463e41e9d8a163a1fd"},"student_id":{"$numberInt":"9"},"name":"Jack Daw","age":{"$numberInt":"21"}} ] }], checksum: 0 }'
+    requests:
+        - header:
+            length: 194
+            requestId: 424238335
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"insert":"students","ordered":true,"lsid":{"id":{"$binary":{"base64":"LPuGTG5HTtWZ+4WDaLhOtg==","subType":"04"}}},"$db":"studentsdb"} }'
+                - '{ SectionSingle identifier: documents , msgs: [ {"_id":{"$oid":"661f7f463e41e9d8a163a1fd"},"student_id":{"$numberInt":"9"},"name":"Jack Daw","age":{"$numberInt":"21"}} ] }'
+            checksum: 0
+          read_delay: 172225
+    responses:
+        - header:
+            length: 45
+            requestId: 371
+            responseTo: 424238335
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"n":{"$numberInt":"1"},"ok":{"$numberDouble":"1.0"}} }'
+            checksum: 0
+          read_delay: 1116094
+    created: 1713340230
+    reqTimestampMock: 2024-04-17T13:20:30.59293419+05:30
+    resTimestampMock: 2024-04-17T13:20:30.594142387+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-5
+spec:
+    metadata:
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"ismaster":{"$numberInt":"1"},"helloOk":true,"$db":"admin"} }], checksum: 0 }'
+        type: config
+    requests:
+        - header:
+            length: 65
+            requestId: 719885386
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"ismaster":{"$numberInt":"1"},"helloOk":true,"$db":"admin"} }'
+            checksum: 0
+          read_delay: 10002911638
+    responses:
+        - header:
+            length: 314
+            requestId: 372
+            responseTo: 719885386
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"helloOk":true,"ismaster":true,"topologyVersion":{"processId":{"$oid":"661f7750b23fee11d5bdfd0d"},"counter":{"$numberLong":"0"}},"maxBsonObjectSize":{"$numberInt":"16777216"},"maxMessageSizeBytes":{"$numberInt":"48000000"},"maxWriteBatchSize":{"$numberInt":"100000"},"localTime":{"$date":{"$numberLong":"1713340233667"}},"logicalSessionTimeoutMinutes":{"$numberInt":"30"},"connectionId":{"$numberInt":"37"},"minWireVersion":{"$numberInt":"0"},"maxWireVersion":{"$numberInt":"21"},"readOnly":false,"ok":{"$numberDouble":"1.0"}} }'
+            checksum: 0
+          read_delay: 215107
+    created: 1713340233
+    reqTimestampMock: 2024-04-17T13:20:33.667835336+05:30
+    resTimestampMock: 2024-04-17T13:20:33.668161365+05:30
+---
+version: api.keploy.io/v1beta1
+kind: Mongo
+name: mock-6
+spec:
+    metadata:
+        operation: '{ OpMsg flags: 0, sections: [{ SectionSingle msg: {"find":"students","filter":{},"projection":{"_id":{"$numberInt":"0"}},"lsid":{"id":{"$binary":{"base64":"LPuGTG5HTtWZ+4WDaLhOtg==","subType":"04"}}},"$db":"studentsdb"} }], checksum: 0 }'
+    requests:
+        - header:
+            length: 140
+            requestId: 1649760492
+            responseTo: 0
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"find":"students","filter":{},"projection":{"_id":{"$numberInt":"0"}},"lsid":{"id":{"$binary":{"base64":"LPuGTG5HTtWZ+4WDaLhOtg==","subType":"04"}}},"$db":"studentsdb"} }'
+            checksum: 0
+          read_delay: 4997519585
+    responses:
+        - header:
+            length: 215
+            requestId: 374
+            responseTo: 1649760492
+            Opcode: 2013
+          message:
+            flagBits: 0
+            sections:
+                - '{ SectionSingle msg: {"cursor":{"firstBatch":[{"student_id":{"$numberInt":"9"},"name":"Akash kumar","age":{"$numberInt":"21"}},{"student_id":{"$numberInt":"9"},"name":"Jack Daw","age":{"$numberInt":"21"}}],"id":{"$numberLong":"0"},"ns":"studentsdb.students"},"ok":{"$numberDouble":"1.0"}} }'
+            checksum: 0
+          read_delay: 1402330
+    created: 1713340235
+    reqTimestampMock: 2024-04-17T13:20:35.591747372+05:30
+    resTimestampMock: 2024-04-17T13:20:35.593363981+05:30
